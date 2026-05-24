@@ -1,17 +1,17 @@
 # INFOTECT-INTERNSHIP W1
-Infotect internship week 1
+# Infotect internship week 1
 
-[Prerequisites
-First, ensure you have the required packages installed]
+# Prerequisites
+First, ensure you have the required packages installed
 
 pip install langchain langchain-openai langchain-community pinecone-client unstructured pydantic
 
-[You will also need to set up your environment variables]
+# You will also need to set up your environment variables
 
 export OPENAI_API_KEY="your-openai-key"
 export PINECONE_API_KEY="your-pinecone-key"
 
-[Week 1: Ingestion Pipeline Implementation]
+# Week 1: Ingestion Pipeline Implementation
 
 import os
 from langchain_community.document_loaders import UnstructuredFileLoader
@@ -110,10 +110,10 @@ for idx, chunk in enumerate(chunks):
         index.upsert(vectors=vectors_to_upsert)
         vectors_to_upsert = []
 
-print("Ingestion pipeline successfully completed!")
+# print("Ingestion pipeline successfully completed!")
 
-[Verification and Testing Focus
-Per your requirement to verify if a query for a specific policy (e.g., "How do I get money back?") successfully retrieves the relevant chunks (e.g., "Refund Policy"), use this verification script]
+# Verification and Testing Focus
+# Per your requirement to verify if a query for a specific policy (e.g., "How do I get money back?") successfully retrieves the relevant chunks (e.g., "Refund Policy"), use this verification script
 
 # ==========================================
 # WEEK 1 VERIFICATION SCRIPT
