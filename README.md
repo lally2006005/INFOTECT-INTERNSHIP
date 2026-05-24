@@ -19,9 +19,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from pinecone import Pinecone, ServerlessSpec
 
-# ==========================================
+
 # 1. INITIALIZATION & SETUP
-# ==========================================
+
 # Ensure API keys are present
 if not os.environ.get("OPENAI_API_KEY") or not os.environ.get("PINECONE_API_KEY"):
     raise ValueError("Please set BOTH OPENAI_API_KEY and PINECONE_API_KEY environment variables.")
@@ -51,9 +51,9 @@ else:
 # Connect to the target index
 index = pc.Index(INDEX_NAME)
 
-# ==========================================
+
 # 2. DOCUMENT LOADING (Unstructured.io)
-# ==========================================
+
 # Replace 'your_policy_document.pdf' with your actual file path
 file_path = "your_policy_document.pdf" 
 
@@ -62,9 +62,9 @@ loader = UnstructuredFileLoader(file_path, mode="elements")
 documents = loader.load()
 print(f"Loaded {len(documents)} elements from the document.")
 
-# ==========================================
+
 # 3. SOPHISTICATED CHUNKING STRATEGY
-# ==========================================
+
 print("Splitting document text into sophisticated chunks...")
 # Setting a clean chunk size and overlap for context retention
 text_splitter = RecursiveCharacterTextSplitter(
@@ -77,9 +77,9 @@ text_splitter = RecursiveCharacterTextSplitter(
 chunks = text_splitter.split_documents(documents)
 print(f"Created {len(chunks)} text chunks.")
 
-# ==========================================
+
 # 4. EMBEDDING GENERATION & PINECONE UPSERT
-# ==========================================
+
 print("Initializing OpenAI Embeddings...")
 embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL)
 
@@ -115,9 +115,9 @@ for idx, chunk in enumerate(chunks):
 # Verification and Testing Focus
 # Per your requirement to verify if a query for a specific policy (e.g., "How do I get money back?") successfully retrieves the relevant chunks (e.g., "Refund Policy"), use this verification script
 
-# ==========================================
+
 # WEEK 1 VERIFICATION SCRIPT
-# ==========================================
+
 def verify_retrieval(query_text: str):
     print(f"\n[Verification] Running Query: '{query_text}'")
     
