@@ -2,7 +2,7 @@
 # Infotect internship week 1
 
 # Prerequisites
-First, ensure you have the required packages installed
+# First, ensure you have the required packages installed
 
 pip install langchain langchain-openai langchain-community pinecone-client unstructured pydantic
 
