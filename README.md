@@ -1,4 +1,4 @@
-# INFOTECT-INTERNSHIP
+# INFOTECT-INTERNSHIP W1
 Infotect internship week 1
 
 [Prerequisites
